@@ -1,0 +1,3 @@
+This game is built on top of Cocos2d-html5 framework to visualize different Parallel Scheduling algorithms in non-preemptive and preemptive modes.
+It's not only working for my Final Master Project at California State Polytechnic - Pomona, but it is also fun and challenging puzzle game for players.
+The project also contains the original cocos2d-html5-v2.2.3.zip for reference.
