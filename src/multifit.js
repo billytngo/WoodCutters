@@ -74,12 +74,13 @@ function randomGenerateNonpreemptive(nJobs, pMax){
             var p = Math.floor(Math.random()*100)%pMax + 1;
             P.push(p);
         }
-        P.sort(function(a, b){return b-a});
 
-        var result = Multifit(P,5);
+        var _P = clone(P);
+        _P.sort(function(a, b){return b-a});
+
+        var result = Multifit(_P,5);
 
         if(result.cMax <= 9){
-            P.sort();
             return {P: P, cMax:result.cMax, cSum: result.cSum};
         }
     }

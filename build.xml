@@ -215,9 +215,6 @@
                 <file name="CocoStudio/Reader/SceneReader.js"/>
             </sources>
             <sources dir="${basedir}">
-                <file name="src/resource.js"/>
-                <file name="src/myApp.js"/>
-                <file name="main.js"/>
             </sources>
         </jscomp>
     </target>

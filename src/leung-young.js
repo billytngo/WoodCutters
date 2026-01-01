@@ -8,11 +8,15 @@ function randomGeneratePreemptive(nJobs, pMax){
             var p = Math.floor(Math.random()*100)%pMax + 1;
             P.push(p);
         }
-        P.sort();
-        var ret = LeungYoung(P,5);
+
+        var _P = clone(P);
+        _P.sort();
+
+        var ret = LeungYoung(_P,5);
         if(ret == null){
             continue;
         }
+
         if(ret.cMax<=9) {
             return {P: P, cMax: ret.cMax, cSum: ret.cSum};
         }

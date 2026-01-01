@@ -156,16 +156,28 @@ function PreemptiveSchedule(){
     };
 
     this.cSum = function(){
-        var cSum = 0;
+        var jobMax = [];
+        var jobLength = this.nJobs();
+        for(var i=0;i<jobLength;i++){
+            jobMax.push(0);
+        }
+
         for(var machineId in this.machines){
             var c = 0;
             for(var i=0;i<this.assignments[machineId].length;i++){
                 var segmentId = this.assignments[machineId][i];
                 c += this.segments[segmentId].processingTime;
-                cSum += c;
+                var jobId = this.segments[segmentId].jobId;
+                jobMax[jobId] = Math.max(jobMax[jobId],c);
             }
         }
-        return cSum;
+
+        var ret = 0;
+        for(var i=0;i<jobLength;i++){
+            ret += jobMax[i];
+        }
+
+        return ret;
     };
 
     this.cMax = function(){

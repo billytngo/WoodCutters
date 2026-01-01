@@ -39,11 +39,12 @@
         //SingleEngineFile:'',
         appFiles:[
             "src/resource.js",
+            "src/utils.js",
             "src/data.js",
             "src/multifit.js",
             "src/leung-young.js",
             "src/data.js",
-            "src/mainmenu.js",
+            "src/main-menu.js",
             "src/nonpreemptive-gameworld.js",
             "src/preemptive-gameworld.js"
         ]
@@ -79,12 +80,8 @@
             alert('You must specify either the single engine file OR the engine directory in "cocos2d.js"');
         }
         /*********Delete this section if you have packed all files into one*******/
-
-            //s.src = 'myTemplate.js'; //IMPORTANT: Un-comment this line if you have packed all files into one
-
         d.body.appendChild(s);
         document.ccConfig = c;
         s.id = 'cocos2d-html5';
-        //else if single file specified, load singlefile
     });
 })();
